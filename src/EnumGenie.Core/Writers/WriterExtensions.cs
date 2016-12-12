@@ -11,5 +11,13 @@ namespace EnumGenie.Writers
 
             return writer.Custom(new FileWriter(file, config.Writer));
         }
+
+        public static EnumGenie Console(this Writer writer, Action<WriterConfig> configure)
+        {
+            WriterConfig config = new WriterConfig();
+            configure(config);
+
+            return writer.Custom(new ConsoleWriter(config.Writer));
+        }
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="Sources\AssemblyEnumSource.cs" />
     <Compile Include="Writers\CompositeWriter.cs" />
     <Compile Include="EnumMemberDefinition.cs" />
+    <Compile Include="Writers\ConsoleWriter.cs" />
     <Compile Include="Writers\FileWriter.cs" />
     <Compile Include="Filters\Filter.cs" />
     <Compile Include="Filters\FilterExtensions.cs" />
