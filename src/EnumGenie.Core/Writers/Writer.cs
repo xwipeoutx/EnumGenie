@@ -1,5 +1,8 @@
 namespace EnumGenie.Writers
 {
+    /// <summary>
+    /// Entry configurator for writers. Use extension methods for better readability
+    /// </summary>
     public class Writer
     {
         private readonly EnumGenie _enumGenie;

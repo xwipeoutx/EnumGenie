@@ -1,5 +1,8 @@
 namespace EnumGenie.Transforms
 {
+    /// <summary>
+    /// Entry configurator for transforms. Use extension methods for better readability
+    /// </summary>
     public class Transform
     {
         private readonly EnumGenie _enumGenie;
