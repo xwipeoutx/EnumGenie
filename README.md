@@ -5,6 +5,10 @@ Generate enums matching your C# enums.
 
 Comes with generators for TypeScript.
 
+## Documentation
+
+See the [wiki](https://github.com/xwipeoutx/EnumGenie/wiki)
+
 ## Usage
 
 See `EnumGenie.Sample` project for a ...umm... sample. Crazy.
