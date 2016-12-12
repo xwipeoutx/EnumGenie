@@ -12,5 +12,8 @@
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>codegen</tags>
+    <dependencies>
+      <dependency id="EnumGenie.Core" version="$version$" />
+    </dependencies>
   </metadata>
 </package>
