@@ -44,11 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="EnumGenie.Core.nuspec" />
+    <Compile Include="Transforms\CustomTransform.cs" />
     <Compile Include="EnumDefinition.cs" />
     <Compile Include="EnumGenie.cs" />
+    <Compile Include="Transforms\ITransform.cs" />
     <Compile Include="Sources\AssemblyEnumSource.cs" />
     <Compile Include="EnumWriters\CompositeEnumWriter.cs" />
     <Compile Include="EnumMemberDefinition.cs" />
+    <Compile Include="Transforms\Transform.cs" />
+    <Compile Include="Transforms\TransformExtensions.cs" />
     <Compile Include="Writers\ConsoleWriter.cs" />
     <Compile Include="Writers\FileWriter.cs" />
     <Compile Include="Filters\Filter.cs" />

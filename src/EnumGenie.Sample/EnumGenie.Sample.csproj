@@ -46,6 +46,7 @@
     <Compile Include="Enums\CustomValues.cs" />
     <Compile Include="Enums\Descriptions.cs" />
     <Compile Include="Enums\Flags.cs" />
+    <Compile Include="Enums\RenamedStripThisOut.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\Standard.cs" />
