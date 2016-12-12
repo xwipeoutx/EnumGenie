@@ -6,7 +6,7 @@ namespace EnumGenie.Writers
     {
         public static EnumGenie File(this Writer writer, string file, Action<WriterConfig> configure)
         {
-            WriterConfig config = new WriterConfig();
+            var config = new WriterConfig();
             configure(config);
 
             return writer.Custom(new FileWriter(file, config.Writer));
@@ -14,7 +14,7 @@ namespace EnumGenie.Writers
 
         public static EnumGenie Console(this Writer writer, Action<WriterConfig> configure)
         {
-            WriterConfig config = new WriterConfig();
+            var config = new WriterConfig();
             configure(config);
 
             return writer.Custom(new ConsoleWriter(config.Writer));

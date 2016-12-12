@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EnumGenie.Core.nuspec" />
     <Compile Include="EnumDefinition.cs" />
     <Compile Include="EnumGenie.cs" />
     <Compile Include="Sources\AssemblyEnumSource.cs" />
-    <Compile Include="Writers\CompositeWriter.cs" />
+    <Compile Include="EnumWriters\CompositeEnumWriter.cs" />
     <Compile Include="EnumMemberDefinition.cs" />
     <Compile Include="Writers\ConsoleWriter.cs" />
     <Compile Include="Writers\FileWriter.cs" />
@@ -54,7 +55,7 @@
     <Compile Include="Filters\FilterExtensions.cs" />
     <Compile Include="Filters\IEnumFilter.cs" />
     <Compile Include="Sources\IEnumSource.cs" />
-    <Compile Include="Writers\IEnumWriter.cs" />
+    <Compile Include="EnumWriters\IEnumWriter.cs" />
     <Compile Include="Writers\IWriter.cs" />
     <Compile Include="Filters\PredicateFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Writers\WriterConfig.cs" />
     <Compile Include="Writers\WriterExtensions.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

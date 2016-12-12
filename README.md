@@ -1,4 +1,6 @@
 # EnumGenie
+[![Build status](https://ci.appveyor.com/api/projects/status/x5f1ywgtd6cgmh5b?svg=true)](https://ci.appveyor.com/project/xwipeoutx/enumgenie)
+
 Generate enums matching your C# enums.  
 
 Comes with generators for TypeScript.

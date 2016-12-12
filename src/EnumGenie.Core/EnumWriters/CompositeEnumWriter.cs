@@ -3,11 +3,11 @@ using System.IO;
 
 namespace EnumGenie.Writers
 {
-    public class CompositeWriter : IEnumWriter
+    public class CompositeEnumWriter : IEnumWriter
     {
         private readonly IReadOnlyCollection<IEnumWriter> _writers;
 
-        public CompositeWriter(IReadOnlyCollection<IEnumWriter> writers)
+        public CompositeEnumWriter(IReadOnlyCollection<IEnumWriter> writers)
         {
             _writers = writers;
         }

@@ -14,7 +14,7 @@ namespace EnumGenie.TypeScript
 
         internal IEnumWriter CreateWriter()
         {
-            return new CompositeWriter(_writers);
+            return new CompositeEnumWriter(_writers);
         }
     }
 }
