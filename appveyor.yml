@@ -1,0 +1,20 @@
+version: 0.0.{build}
+image: Visual Studio 2015
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+nuget:
+  project_feed: true
+build:
+  project: src
+  publish_nuget: true
+  verbosity: detailed
+deploy:
+- provider: NuGet
+  api_key:
+    secure: X2uz65l0BYTO4wu2eDQK06cp6Ad7DTwwd6/7kTanRy9lf3x70B9D3mJmjnZpNtoh
+  on:
+    branch: master
