@@ -1,5 +1,7 @@
 # EnumGenie
-[![Build status](https://ci.appveyor.com/api/projects/status/x5f1ywgtd6cgmh5b?svg=true)](https://ci.appveyor.com/project/xwipeoutx/enumgenie)
+[![Build status](https://ci.appveyor.com/api/projects/status/x5f1ywgtd6cgmh5b/branch/master?svg=true)](https://ci.appveyor.com/project/xwipeoutx/enumgenie/branch/master) Master
+
+[![Build status](https://ci.appveyor.com/api/projects/status/x5f1ywgtd6cgmh5b?svg=true)](https://ci.appveyor.com/project/xwipeoutx/enumgenie) CI
 
 Generate enums matching your C# enums.  
 
