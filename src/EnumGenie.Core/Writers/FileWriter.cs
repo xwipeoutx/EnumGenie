@@ -16,7 +16,7 @@ namespace EnumGenie.Writers
 
         public void Write(IReadOnlyCollection<EnumDefinition> enumDefinitions)
         {
-            using (var stream = File.Open(_file, FileMode.Truncate, FileAccess.Write))
+            using (var stream = File.Open(_file, FileMode.OpenOrCreate & FileMode.Truncate, FileAccess.Write))
             {
                 foreach (var definition in enumDefinitions)
                 {
