@@ -15,12 +15,6 @@ Comes with generators for TypeScript.
     Install-Package EnumGenie.TypeScript
 ```
 
-Or if you're targetting .NET Core (don't do this if you're on the full framework)
-
-```ps
-    Install-Package EnumGenie.TypeScript -Pre
-```
-
 ## Documentation
 
 See the [wiki](https://github.com/xwipeoutx/EnumGenie/wiki)
