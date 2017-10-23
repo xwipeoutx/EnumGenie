@@ -12,7 +12,7 @@ Comes with generators for TypeScript.
 [EnumGenie is a nuget](https://www.nuget.org/packages/EnumGenie.TypeScript)! Crazy, I know.
 
 ```ps
-    Install-Package EnumGenie.TypeScript
+    dotnet add package EnumGenie.TypeScript
 ```
 
 ## Documentation
@@ -24,18 +24,28 @@ See the [wiki](https://github.com/xwipeoutx/EnumGenie/wiki)
 See `EnumGenie.Sample` project for a ...umm... sample. Crazy.
 
 ```cs
-public static class Program
-{
-    public static void Main()
-    {
-        var genie = new EnumGenie()
-            .SourceFrom.Assembly(typeof(Program).Assembly)
-            .FilterBy.Predicate(t => t != typeof(Ignored))
-            .TransformBy.RenamingEnum(def => def.Name.Replace("StripThisOut", ""))
-            .WriteTo.Console(cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()))
-            .WriteTo.File("c:\\temp\\enums.ts", cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()));
+using EnumGenie.Filters;
+using EnumGenie.Sample.Enums;
+using EnumGenie.Sources;
+using EnumGenie.Transforms;
+using EnumGenie.TypeScript;
+using EnumGenie.Writers;
 
-        genie.Write();
+namespace EnumGenie.Sample
+{
+    public static class Program
+    {
+        public static void Main()
+        {
+            var genie = new EnumGenie()
+                .SourceFrom.Assembly(typeof(Program).Assembly)
+                .FilterBy.Predicate(t => t != typeof(Ignored))
+                .TransformBy.RenamingEnum(def => def.Name.Replace("StripThisOut", ""))
+                .WriteTo.Console(cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()))
+                .WriteTo.File("./TypeScript/enums.ts", cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()));
+
+            genie.Write();
+        }
     }
 }
 ```

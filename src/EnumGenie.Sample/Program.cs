@@ -16,7 +16,7 @@ namespace EnumGenie.Sample
                 .FilterBy.Predicate(t => t != typeof(Ignored))
                 .TransformBy.RenamingEnum(def => def.Name.Replace("StripThisOut", ""))
                 .WriteTo.Console(cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()))
-                .WriteTo.File("c:\\temp\\enums.ts", cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()));
+                .WriteTo.File("./TypeScript/enums.ts", cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()));
 
             genie.Write();
         }
