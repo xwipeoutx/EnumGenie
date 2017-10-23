@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>EnumGenie.Core</AssemblyName>
-    <RootNamespace>EnumGenie.Core</RootNamespace>
-    <Description></Description>
-    <Authors>EnumGenie.Core</Authors>
-    <Copyright>Copyright ©  2016</Copyright>
-    <Product>Enum Genie</Product>
+    <PackageId>EnumGenie.Core</PackageId>
+    <authors>Steve Leigh</authors>
+    <owners>Steve Leigh</owners>
+    <projectUrl>https://github.com/xwipeoutx/EnumGenie</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generate enums matching your C# enums</description>
+    <copyright>Copyright © 2017, Steve Leigh</copyright>
+    <Version>0.0.0.0</Version>
+    <PackageVersion>0.0.0.0</PackageVersion>
+    <tags>codegen</tags>
   </PropertyGroup>
 
 </Project>

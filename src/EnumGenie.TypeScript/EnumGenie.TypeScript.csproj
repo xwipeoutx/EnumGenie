@@ -1,9 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>EnumGenie.TypeScript</AssemblyName>
-    <RootNamespace>EnumGenie.TypeScript</RootNamespace>
+    <PackageId>EnumGenie.TypeScript</PackageId>
+    <authors>Steve Leigh</authors>
+    <owners>Steve Leigh</owners>
+    <projectUrl>https://github.com/xwipeoutx/EnumGenie</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generate enums matching your C# enums</description>
+    <copyright>Copyright © 2017, Steve Leigh</copyright>
+    <Version>0.0.0.0</Version>
+    <PackageVersion>0.0.0.0</PackageVersion>
+    <tags>codegen</tags>
   </PropertyGroup>
 
   <ItemGroup>
