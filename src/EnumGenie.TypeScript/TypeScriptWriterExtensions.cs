@@ -52,9 +52,12 @@ namespace EnumGenie.TypeScript
         /// <summary>
         /// Outputs full descriptors, which include the name, value and description
         /// </summary>
-        public static TypeScriptWriterConfig Descriptor(this TypeScriptWriterConfig config)
+        public static TypeScriptWriterConfig Descriptor(this TypeScriptWriterConfig config, Action<EnumDescriptorWriterConfig> configureDescriptor = null)
         {
-            config.AddTypeScriptWriter(new EnumDescriptorWriter());
+            var descriptorConfig = new EnumDescriptorWriterConfig();
+            configureDescriptor?.Invoke(descriptorConfig);
+
+            config.AddTypeScriptWriter(new EnumDescriptorWriter(descriptorConfig));
             return config;
         }
     }

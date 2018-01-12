@@ -1,4 +1,4 @@
-export enum CustomValues {
+export const enum CustomValues {
     First = 2,
     Second = 4,
     Third = 100
@@ -14,7 +14,7 @@ export function customValuesDescription(value: CustomValues) {
     }
 }
 export interface ICustomValuesDescriptor { value: CustomValues; name: string; description: string; }
-export var allCustomValues: ICustomValuesDescriptor[] = [
+export const allCustomValues: ICustomValuesDescriptor[] = [
     { value: CustomValues.First, name: `First`, description: `First` },
     { value: CustomValues.Second, name: `Second`, description: `Second` },
     { value: CustomValues.Third, name: `Third`, description: `Third` }
@@ -30,7 +30,7 @@ export function getCustomValuesDescriptor(value: CustomValues) {
             return { value: CustomValues.Third, name: `Third`, description: `Third` };
     }
 }
-export enum Descriptions {
+export const enum Descriptions {
     First = 0,
     Second = 1,
     Third = 2
@@ -46,7 +46,7 @@ export function descriptionsDescription(value: Descriptions) {
     }
 }
 export interface IDescriptionsDescriptor { value: Descriptions; name: string; description: string; }
-export var allDescriptions: IDescriptionsDescriptor[] = [
+export const allDescriptions: IDescriptionsDescriptor[] = [
     { value: Descriptions.First, name: `First`, description: `Number 1` },
     { value: Descriptions.Second, name: `Second`, description: `Number 2` },
     { value: Descriptions.Third, name: `Third`, description: `Number 3` }
@@ -62,7 +62,7 @@ export function getDescriptionsDescriptor(value: Descriptions) {
             return { value: Descriptions.Third, name: `Third`, description: `Number 3` };
     }
 }
-export enum Flags {
+export const enum Flags {
     None = 0,
     First = 1,
     Second = 2,
@@ -81,7 +81,7 @@ export function flagsDescription(value: Flags) {
     }
 }
 export interface IFlagsDescriptor { value: Flags; name: string; description: string; }
-export var allFlags: IFlagsDescriptor[] = [
+export const allFlags: IFlagsDescriptor[] = [
     { value: Flags.First, name: `First`, description: `First` },
     { value: Flags.Second, name: `Second`, description: `Second` },
     { value: Flags.Third, name: `Third`, description: `Third` }
@@ -97,7 +97,7 @@ export function getFlagsDescriptor(value: Flags) {
             return { value: Flags.Third, name: `Third`, description: `Third` };
     }
 }
-export enum Renamed {
+export const enum Renamed {
     First = 0,
     Second = 1,
     Third = 2
@@ -113,7 +113,7 @@ export function renamedDescription(value: Renamed) {
     }
 }
 export interface IRenamedDescriptor { value: Renamed; name: string; description: string; }
-export var allRenamed: IRenamedDescriptor[] = [
+export const allRenamed: IRenamedDescriptor[] = [
     { value: Renamed.First, name: `First`, description: `First` },
     { value: Renamed.Second, name: `Second`, description: `Second` },
     { value: Renamed.Third, name: `Third`, description: `Third` }
@@ -129,7 +129,7 @@ export function getRenamedDescriptor(value: Renamed) {
             return { value: Renamed.Third, name: `Third`, description: `Third` };
     }
 }
-export enum Standard {
+export const enum Standard {
     First = 0,
     Second = 1,
     Third = 2
@@ -145,7 +145,7 @@ export function standardDescription(value: Standard) {
     }
 }
 export interface IStandardDescriptor { value: Standard; name: string; description: string; }
-export var allStandard: IStandardDescriptor[] = [
+export const allStandard: IStandardDescriptor[] = [
     { value: Standard.First, name: `First`, description: `First` },
     { value: Standard.Second, name: `Second`, description: `Second` },
     { value: Standard.Third, name: `Third`, description: `Third` }
