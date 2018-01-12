@@ -7,17 +7,17 @@ namespace EnumGenie.TypeScript
 {
     public class EnumDeclarationWriter : IEnumWriter
     {
+        private readonly bool _const;
+
         public EnumDeclarationWriter(EnumDeclarationWriterConfig config)
         {
-            Const = config?.Const ?? false;
+            _const = config?.Const ?? false;
         }
-
-        private bool Const { get; set; }
 
         public void WriteTo(Stream stream, EnumDefinition enumDefinition)
         {
             var writer = new StreamWriter(stream);
-            var writeConst = Const ? "const " : string.Empty;
+            var writeConst = _const ? "const " : string.Empty;
             writer.WriteLine($"export {writeConst}enum {enumDefinition.Name} {{");
 
             writer.Write(string.Join($",{Environment.NewLine}", enumDefinition.Members.Select(MemberValueAssignment)));

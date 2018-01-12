@@ -15,8 +15,19 @@ namespace EnumGenie.Sample
                 .SourceFrom.Assembly(typeof(Program).Assembly)
                 .FilterBy.Predicate(t => t != typeof(Ignored))
                 .TransformBy.RenamingEnum(def => def.Name.Replace("StripThisOut", ""))
-                .WriteTo.Console(cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()))
-                .WriteTo.File("./TypeScript/enums.ts", cfg => cfg.TypeScript(ts => ts.Declaration().Description().Descriptor()));
+                .WriteTo.Console(cfg => 
+                    cfg.TypeScript(ts => 
+                        ts.Declaration()
+                          .Description()
+                          .Descriptor()
+                        )
+                    )
+                .WriteTo.File("./TypeScript/enums.ts", cfg =>
+                    cfg.TypeScript(ts =>
+                        ts.Declaration(c => c.AsConst())
+                            .Description()
+                            .Descriptor(c => c.AsConst())
+                    ));
 
             genie.Write();
         }
