@@ -30,11 +30,16 @@ namespace EnumGenie.TypeScript
         /// <summary>
         /// Outputs just the enum
         /// </summary>
-        public static TypeScriptWriterConfig Declaration(this TypeScriptWriterConfig config)
+        public static TypeScriptWriterConfig Declaration(this TypeScriptWriterConfig config, Action<EnumDeclarationWriterConfig> configureDeclaration = null)
         {
-            config.AddTypeScriptWriter(new EnumDeclarationWriter());
+            var declarationConfig = new EnumDeclarationWriterConfig();
+            configureDeclaration?.Invoke(declarationConfig);
+
+            var writer = new EnumDeclarationWriter(declarationConfig);
+            config.AddTypeScriptWriter(writer);
             return config;
         }
+
         /// <summary>
         /// Outputs functions to get the descriptions of the enums
         /// </summary>
