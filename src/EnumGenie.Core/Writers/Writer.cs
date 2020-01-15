@@ -12,7 +12,7 @@ namespace EnumGenie.Writers
             _enumGenie = enumGenie;
         }
 
-        internal EnumGenie Custom(IWriter writer)
+        public EnumGenie Custom(IWriter writer)
         {
             _enumGenie.AddWriter(writer);
             return _enumGenie;
