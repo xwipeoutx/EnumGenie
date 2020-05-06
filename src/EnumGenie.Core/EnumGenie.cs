@@ -92,15 +92,22 @@ namespace EnumGenie
 
         private static EnumDefinition EnumDefinition(Type enumType)
         {
-            var memberDefinitions = enumType.GetEnumValues()
-                .Cast<int>()
-                .Select(value => EnumMemberDefinition(enumType, value))
-                .ToList();
+            var memberDefinitions = GenerateMemberDefinitions(enumType).ToList();
 
             return new EnumDefinition(enumType, enumType.Name, memberDefinitions);
         }
 
-        private static EnumMemberDefinition EnumMemberDefinition(Type enumType, int value)
+        private static IEnumerable<EnumMemberDefinition> GenerateMemberDefinitions(Type enumType)
+        {
+            var memberDefinitions = enumType.GetEnumValues();
+
+            foreach (var member in memberDefinitions)
+            {
+                object val = Convert.ChangeType(member, Type.GetTypeCode(enumType));
+                yield return EnumMemberDefinition(enumType, val);
+            }
+        }
+        private static EnumMemberDefinition EnumMemberDefinition(Type enumType, object value)
         {
             var name = Enum.GetName(enumType, value);
             var member = enumType.GetMember(name)[0];

@@ -19,7 +19,11 @@ namespace EnumGenie.TypeScript
         {
             var membersExceptFlagsDefault = enumDefinition.EnumType.GetCustomAttribute<FlagsAttribute>() == null
                 ? enumDefinition.Members
-                : enumDefinition.Members.Where(m => m.Value != 0).ToList();
+                : enumDefinition.Members.Where(m => 
+                    m.Member.ReflectedType == typeof(int) && (int)m.Value != 0
+                    || m.Member.ReflectedType == typeof(long) && (long)m.Value != 0
+                    || m.Member.ReflectedType == typeof(byte) && (byte)m.Value != 0
+                ).ToList();
 
             var varOrConst = _const ? "const" : "var";
 
