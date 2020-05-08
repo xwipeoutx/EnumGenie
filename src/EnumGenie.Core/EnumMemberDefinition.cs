@@ -4,7 +4,7 @@ namespace EnumGenie
 {
     public class EnumMemberDefinition
     {
-        public EnumMemberDefinition(MemberInfo member, int value, string name, string description)
+        public EnumMemberDefinition(MemberInfo member, object value, string name, string description)
         {
             Value = value;
             Name = name;
@@ -13,7 +13,7 @@ namespace EnumGenie
         }
 
         public MemberInfo Member { get; }
-        public int Value { get; }
+        public object Value { get; }
         public string Name { get; }
         public string Description { get; }
     }
