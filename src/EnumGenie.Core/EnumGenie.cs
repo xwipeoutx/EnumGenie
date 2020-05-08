@@ -99,17 +99,21 @@ namespace EnumGenie
 
         private static IEnumerable<EnumMemberDefinition> GenerateMemberDefinitions(Type enumType)
         {
-            var memberDefinitions = enumType.GetEnumValues();
+            // get all names for the enum
+            // because enum names must be unique, the values may not be
+            var memberDefinitions = Enum.GetNames(enumType);
 
             foreach (var member in memberDefinitions)
             {
-                object val = Convert.ChangeType(member, Type.GetTypeCode(enumType));
-                yield return EnumMemberDefinition(enumType, val);
+                // get the underlying value regardless of type
+                var enumParsed = Enum.Parse(enumType, member);
+                object val = Convert.ChangeType(enumParsed, Type.GetTypeCode(enumType));
+
+                yield return EnumMemberDefinition(enumType, member, val);
             }
         }
-        private static EnumMemberDefinition EnumMemberDefinition(Type enumType, object value)
+        private static EnumMemberDefinition EnumMemberDefinition(Type enumType, string name, object value)
         {
-            var name = Enum.GetName(enumType, value);
             var member = enumType.GetMember(name)[0];
             var descriptionAttribute = member.GetCustomAttributes(false).OfType<DescriptionAttribute>().FirstOrDefault();
             var description = descriptionAttribute?.Description ?? name;
