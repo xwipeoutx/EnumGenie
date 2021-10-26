@@ -17,6 +17,13 @@ namespace EnumGenie.TypeScript
         public void WriteTo(Stream stream, EnumDefinition enumDefinition)
         {
             var writer = new StreamWriter(stream);
+
+            if (enumDefinition.Members.Any(m => m.Value is long))
+            {
+                writer.WriteLine("// Warning: Long enums may have double-precision problems, comparing these may return incorrect results.  Use at your own risk.");
+                writer.WriteLine("// See https://github.com/xwipeoutx/EnumGenie/issues/9");
+            }
+            
             var writeConst = _const ? "const " : string.Empty;
             writer.WriteLine($"export {writeConst}enum {enumDefinition.Name} {{");
 
