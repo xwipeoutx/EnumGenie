@@ -97,6 +97,66 @@ export function getFlagsDescriptor(value: Flags) {
             return { value: Flags.Third, name: `Third`, description: `Third` };
     }
 }
+// Warning: Long enums may have double-precision problems, comparing these may return incorrect results.  Use at your own risk.
+// See https://github.com/xwipeoutx/EnumGenie/issues/9
+export const enum LongEnum {
+    ReallyBigSame1 = 793548328091516991,
+    ReallyBigSame2 = 793548328091516992,
+    ReallyBigDifferent = 793548328091516993
+}
+export function longEnumDescription(value: LongEnum) {
+    switch (value) {
+        case LongEnum.ReallyBigSame1:
+            return `ReallyBigSame1`;
+        case LongEnum.ReallyBigSame2:
+            return `ReallyBigSame2`;
+        case LongEnum.ReallyBigDifferent:
+            return `ReallyBigDifferent`;
+    }
+}
+export interface ILongEnumDescriptor { value: LongEnum; name: string; description: string; }
+export const allLongEnum: ILongEnumDescriptor[] = [
+    { value: LongEnum.ReallyBigSame1, name: `ReallyBigSame1`, description: `ReallyBigSame1` },
+    { value: LongEnum.ReallyBigSame2, name: `ReallyBigSame2`, description: `ReallyBigSame2` },
+    { value: LongEnum.ReallyBigDifferent, name: `ReallyBigDifferent`, description: `ReallyBigDifferent` }
+];
+
+export function getLongEnumDescriptor(value: LongEnum) {
+    switch (value) {
+        case LongEnum.ReallyBigSame1:
+            return { value: LongEnum.ReallyBigSame1, name: `ReallyBigSame1`, description: `ReallyBigSame1` };
+        case LongEnum.ReallyBigSame2:
+            return { value: LongEnum.ReallyBigSame2, name: `ReallyBigSame2`, description: `ReallyBigSame2` };
+        case LongEnum.ReallyBigDifferent:
+            return { value: LongEnum.ReallyBigDifferent, name: `ReallyBigDifferent`, description: `ReallyBigDifferent` };
+    }
+}
+export const enum MultipleSameNumber {
+    One = 1,
+    OneOne = 1
+}
+export function multipleSameNumberDescription(value: MultipleSameNumber) {
+    switch (value) {
+        case MultipleSameNumber.One:
+            return `One`;
+        case MultipleSameNumber.OneOne:
+            return `OneOne`;
+    }
+}
+export interface IMultipleSameNumberDescriptor { value: MultipleSameNumber; name: string; description: string; }
+export const allMultipleSameNumber: IMultipleSameNumberDescriptor[] = [
+    { value: MultipleSameNumber.One, name: `One`, description: `One` },
+    { value: MultipleSameNumber.OneOne, name: `OneOne`, description: `OneOne` }
+];
+
+export function getMultipleSameNumberDescriptor(value: MultipleSameNumber) {
+    switch (value) {
+        case MultipleSameNumber.One:
+            return { value: MultipleSameNumber.One, name: `One`, description: `One` };
+        case MultipleSameNumber.OneOne:
+            return { value: MultipleSameNumber.OneOne, name: `OneOne`, description: `OneOne` };
+    }
+}
 export const enum Renamed {
     First = 0,
     Second = 1,
